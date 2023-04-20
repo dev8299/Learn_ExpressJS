@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+
+block content
+    h1 Product
+        .d-flex.justify-content-start.flex-wrap
+            each product in products
+                .card(style='width: 18rem; margin: 10px;')
+                    img.card-img-top(src=product.image)
+                    .card-body
+                        h5.card-title=product.name
+                        p(style='font-size: 12px;').card-text=product.description
+                        a.btn.btn-primary(href='/cart/add/' + product.id) Add To Cart
